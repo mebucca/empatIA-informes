@@ -2378,7 +2378,6 @@ border-radius: 4px;
   </ul></li>
   <li><a href="#limpieza-y-población-de-análisis" id="toc-limpieza-y-población-de-análisis" class="nav-link" data-scroll-target="#limpieza-y-población-de-análisis"><span class="header-section-number">2.4</span> Limpieza y población de análisis</a></li>
   <li><a href="#perfil-de-la-muestra" id="toc-perfil-de-la-muestra" class="nav-link" data-scroll-target="#perfil-de-la-muestra"><span class="header-section-number">2.5</span> Perfil de la muestra</a></li>
-  <li><a href="#sec-denominadores" id="toc-sec-denominadores" class="nav-link" data-scroll-target="#sec-denominadores"><span class="header-section-number">2.6</span> Denominadores: qué cambió respecto de ediciones anteriores</a></li>
   </ul></li>
   <li><a href="#sec-expectativas" id="toc-sec-expectativas" class="nav-link" data-scroll-target="#sec-expectativas"><span class="header-section-number">3</span> Qué esperan las personas de una marca</a>
   <ul class="collapse">
@@ -2592,7 +2591,7 @@ border-radius: 4px;
 </section>
 <section id="filtro-2-hasta-quince-marcas-en-la-batería-de-atributos" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="filtro-2-hasta-quince-marcas-en-la-batería-de-atributos"><span class="header-section-number">2.2.2</span> Filtro 2: hasta quince marcas en la batería de atributos</h3>
-<p>De las marcas que la persona declara conocer, el cuestionario le pide evaluar los 25 atributos para <strong>hasta quince</strong>. El proveedor deja registrado cuáles fueron, en un formato que cambia de una edición a otra: <code>OPCION_MOSTRADA_1..15</code>, una columna por marca, en 2024 y 2025; o <code>MARCAS_EVAL</code>, los códigos separados por comas, en 2023 y 2026. El pipeline lee los dos y se detiene si no encuentra ninguno, porque sin ese registro los puntajes quedarían con el denominador equivocado.</p>
+<p>De las marcas que la persona declara conocer, el cuestionario le pide evaluar los 25 atributos para <strong>hasta quince</strong>. El proveedor deja registrado cuáles fueron, en un formato que cambia de una edición a otra: <code>OPCION_MOSTRADA_1..15</code>, una columna por marca, en 2024 y 2025; o <code>MARCAS_EVAL</code>, los códigos separados por comas, en 2023 y 2026. El pipeline lee los dos y se detiene si no encuentra ninguno, porque sin ese registro no se puede verificar el diseño ni armar el menú de los modelos de elección.</p>
 <p>El sorteo <strong>no es parejo</strong>: prioriza a las marcas menos conocidas, de modo que todas terminen con una base de evaluación parecida —cercana a doscientas personas—. A una marca muy conocida se le pregunta a poco más de la mitad de quienes la conocen; a una de nicho, a todas.</p>
 <div class="cell" data-tbl-cap="Cobertura de la batería de atributos: de quienes conocen la marca, a cuántos se les preguntó">
 <div class="cell-output-display">
@@ -2600,17 +2599,17 @@ border-radius: 4px;
 <caption>Cobertura de la batería de atributos: de quienes conocen la marca, a cuántos se les preguntó</caption>
 <colgroup>
 <col style="width: 6%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 28%">
+<col style="width: 15%">
 <col style="width: 16%">
-<col style="width: 17%">
-<col style="width: 16%">
+<col style="width: 15%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: right;">Marcas</th>
 <th style="text-align: right;">Conocedores, mediana</th>
-<th style="text-align: right;">Evaluadores, mediana</th>
+<th style="text-align: right;">Con la batería delante, mediana</th>
 <th style="text-align: right;">Cobertura mínima</th>
 <th style="text-align: right;">Cobertura mediana</th>
 <th style="text-align: right;">Cobertura máxima</th>
@@ -2629,7 +2628,7 @@ border-radius: 4px;
 </table>
 </div>
 </div>
-<p><strong>Consecuencia directa.</strong> El denominador del puntaje de un atributo no son los conocedores, sino los <strong>evaluadores</strong>: las personas a las que se les mostró la marca en P12 y por lo tanto tuvieron la oportunidad de asociarle algo. Dividir por los conocedores le cobra a las marcas grandes las preguntas que nunca se les hicieron, y lo hace justamente en proporción a su tamaño.</p>
+<p><strong>Consecuencia directa.</strong> El denominador del puntaje de un atributo son <strong>todos los que conocen la marca</strong> (<a href="#sec-ranking" class="quarto-xref">Sección 4</a>). Quien la conoce y no la tuvo en la batería entra al denominador sin asociación, de modo que el puntaje se lee como «de cada cien personas que conocen la marca, cuántas le asocian el atributo».</p>
 </section>
 <section id="controles-de-diseño" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="controles-de-diseño"><span class="header-section-number">2.2.3</span> Controles de diseño</h3>
@@ -2664,7 +2663,7 @@ border-radius: 4px;
 </section>
 <section id="qué-queda-pendiente-en-este-bloque" class="level3" data-number="2.2.4">
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="qué-queda-pendiente-en-este-bloque"><span class="header-section-number">2.2.4</span> Qué queda pendiente en este bloque</h3>
-<p>Los dos filtros describen <strong>quién pudo responder</strong>. Que el denominador sea el correcto no garantiza que ese conjunto de personas represente a la población de interés: esa es una pregunta distinta, y se trata en la <a href="#sec-pesos" class="quarto-xref">Sección 2.3</a>.</p>
+<p>Los dos filtros describen <strong>a quién se le preguntó</strong>. Que el denominador esté bien definido no garantiza que ese conjunto de personas represente a la población de interés: esa es una pregunta distinta, y se trata en la <a href="#sec-pesos" class="quarto-xref">Sección 2.3</a>.</p>
 </section>
 </section>
 <section id="sec-pesos" class="level2" data-number="2.3">
@@ -2691,42 +2690,13 @@ w_i = \underbrace{m_i}_{\text{muestral}} \times \underbrace{e_i}_{\text{exposici
 </section>
 <section id="ponderación-por-la-inversa-de-la-probabilidad-de-exposición" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="ponderación-por-la-inversa-de-la-probabilidad-de-exposición"><span class="header-section-number">2.3.2</span> Ponderación por la inversa de la probabilidad de exposición</h3>
-<p>Los dos filtros de la <a href="#sec-diseno" class="quarto-xref">Sección 2.2</a> no solo cambian el denominador: también cambian <strong>quién</strong> está en él. Esta parte trata ese segundo problema, que es distinto y se corrige de otra forma.</p>
+<p>Los filtros de la <a href="#sec-diseno" class="quarto-xref">Sección 2.2</a> no solo definen los denominadores: también deciden <strong>quién</strong> está en ellos. Esta parte trata ese segundo problema, que es distinto y se corrige de otra forma.</p>
 <section id="los-dos-mecanismos-examinados-por-separado" class="level4" data-number="2.3.2.1">
 <h4 data-number="2.3.2.1" class="anchored" data-anchor-id="los-dos-mecanismos-examinados-por-separado"><span class="header-section-number">2.3.2.1</span> Los dos mecanismos, examinados por separado</h4>
-<p>Cada filtro podría sesgar, y cada uno se examinó antes de corregir nada. La regla fue: una corrección solo se aplica si se demuestra que hace falta.</p>
-<section id="el-tope-de-quince-marcas-no-sesga" class="level5" data-number="2.3.2.1.1">
-<h5 data-number="2.3.2.1.1" class="anchored" data-anchor-id="el-tope-de-quince-marcas-no-sesga"><span class="header-section-number">2.3.2.1.1</span> El tope de quince marcas: <strong>no sesga</strong></h5>
-<p>El sorteo de las quince marcas prioriza a las menos conocidas, así que la probabilidad de que a alguien se le muestre una marca depende de la marca y de cuántas marcas conoce esa persona. Eso sesgaría el puntaje solo si, además, <strong>cuántas marcas conoce predijera cómo marca atributos</strong>.</p>
-<p>No lo hace. Con efectos fijos de marca, el número de marcas conocidas no predice cuántos atributos asocia la persona:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Desenlace</th>
-<th>Coeficiente por marca conocida adicional</th>
-<th>p</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Atributos marcados (de 25)</td>
-<td>0,0012</td>
-<td>0,87</td>
-</tr>
-<tr class="even">
-<td>Asocia «Es cercana» (log-odds)</td>
-<td>−0,0047</td>
-<td>0,17</td>
-</tr>
-<tr class="odd">
-<td>Asocia «Es tecnológica» (log-odds)</td>
-<td>0,0023</td>
-<td>0,44</td>
-</tr>
-</tbody>
-</table>
-<p>Sin efectos fijos sí aparece un patrón, pero es <strong>composición de marcas</strong>: quien conoce pocas marcas ve sus pocas marcas —masivas, muy asociadas—, y quien conoce muchas recibe una rotación que incluye marcas de nicho, con tasas de asociación bajas. Los efectos fijos absorben eso por completo; el <span class="math inline">\(R^2\)</span> no se mueve en la cuarta cifra decimal al agregar el predictor.</p>
-<p>Es exactamente la condición de ignorabilidad que una ponderación repararía. Como se cumple, el estimador sin ponderar dentro de cada marca ya es insesgado y <strong>no se pondera por este mecanismo</strong>. Ponderar aquí solo costaría precisión.</p>
+<p>Cada filtro se examinó antes de corregir nada. La regla fue: una corrección solo se aplica si se demuestra que hace falta.</p>
+<section id="el-tope-de-quince-marcas-no-se-pondera" class="level5" data-number="2.3.2.1.1">
+<h5 data-number="2.3.2.1.1" class="anchored" data-anchor-id="el-tope-de-quince-marcas-no-se-pondera"><span class="header-section-number">2.3.2.1.1</span> El tope de quince marcas: <strong>no se pondera</strong></h5>
+<p>El puntaje de un atributo se expresa sobre todos los que conocen la marca, y el tope solo decide a cuáles de ellos se les hizo la pregunta. Ponderar por la probabilidad de haber tenido la marca en la batería cambiaría el estimando: dejaría de ser «qué proporción de quienes conocen la marca se la asocia» para pasar a ser «qué proporción se la asociaría si a todos se les hubiera preguntado». El estudio publica la primera, así que este mecanismo <strong>no se pondera</strong>.</p>
 </section>
 <section id="la-asignación-de-industria-sí-sesga" class="level5" data-number="2.3.2.1.2">
 <h5 data-number="2.3.2.1.2" class="anchored" data-anchor-id="la-asignación-de-industria-sí-sesga"><span class="header-section-number">2.3.2.1.2</span> La asignación de industria: <strong>sí sesga</strong></h5>
@@ -2922,18 +2892,18 @@ w_i = \underbrace{m_i}_{\text{muestral}} \times \underbrace{e_i}_{\text{exposici
 </table>
 <p>El estimador de los puntajes es de <strong>Hájek</strong> —cociente de sumas ponderadas—, no de Horvitz-Thompson:</p>
 <p><span class="math display">\[
-\hat p_{ba} = \frac{\sum_i w_i M_{ib} X_{iba}}{\sum_i w_i M_{ib}}.
+\hat p_{ba} = \frac{\sum_i w_i K_{ib} X_{iba}}{\sum_i w_i K_{ib}}.
 \]</span></p>
 <p>Al normalizar por la suma de los pesos observados y no por su total teórico, el puntaje no depende de la escala de los pesos y es mucho más estable cuando la base es chica.</p>
 </section>
 <section id="lo-que-cuesta-precisión" class="level4" data-number="2.3.2.5">
 <h4 data-number="2.3.2.5" class="anchored" data-anchor-id="lo-que-cuesta-precisión"><span class="header-section-number">2.3.2.5</span> Lo que cuesta: precisión</h4>
-<p>Ponderar siempre cuesta precisión. El efecto de diseño <span class="math inline">\(1 + \mathrm{CV}^2(w)\)</span> va de 1,04 a 1,66 según la industria, de modo que una marca con doscientos evaluadores puede tener la precisión de ciento veinte.</p>
-<p>Por eso <strong>el umbral de base pasa a aplicarse sobre los casos efectivos</strong>,</p>
+<p>Ponderar siempre cuesta precisión. El efecto de diseño <span class="math inline">\(1 + \mathrm{CV}^2(w)\)</span> va de 1,04 a 1,66 según la industria, de modo que una marca con trescientos conocedores puede tener la precisión de ciento ochenta.</p>
+<p>Por eso <strong>el umbral de base se aplica sobre los casos efectivos</strong>,</p>
 <p><span class="math display">\[
-n_{\text{ef}} = \frac{\left(\sum_i w_i M_{ib}\right)^2}{\sum_i w_i^2 M_{ib}},
+n_{\text{ef}} = \frac{\left(\sum_i w_i K_{ib}\right)^2}{\sum_i w_i^2 K_{ib}},
 \]</span></p>
-<p>y no sobre el recuento de evaluadores. Una marca entra al ranking con al menos 60 casos efectivos. El criterio es más exigente que antes y deja fuera a alguna marca que sí entraba.</p>
+<p>y no sobre el recuento de conocedores. Una marca entra al ranking con al menos 60 casos efectivos.</p>
 <p>Los intervalos también cambian: con ponderadores, el intervalo de Wilson ya no aplica —supone un conteo binomial y aquí el puntaje es un cociente de sumas ponderadas—, así que se usa el error de linealización, el mismo con que se calculan las brechas. Wilson sobre los casos efectivos queda solo como respaldo para las celdas donde todos responden igual y la linealización daría error cero.</p>
 </section>
 <section id="cuánto-cambian-los-resultados" class="level4" data-number="2.3.2.6">
@@ -3014,11 +2984,11 @@ n_{\text{ef}} = \frac{\left(\sum_i w_i M_{ib}\right)^2}{\sum_i w_i^2 M_{ib}},
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">109</td>
+<td style="text-align: right;">110</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">3.7</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">6</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">8</td>
 </tr>
 </tbody>
 </table>
@@ -3029,13 +2999,13 @@ n_{\text{ef}} = \frac{\left(\sum_i w_i M_{ib}\right)^2}{\sum_i w_i^2 M_{ib}},
 <table class="caption-top table table-sm table-striped small">
 <caption>Las marcas que más se mueven al ponderar</caption>
 <colgroup>
-<col style="width: 9%">
-<col style="width: 19%">
+<col style="width: 12%">
+<col style="width: 18%">
 <col style="width: 17%">
-<col style="width: 15%">
+<col style="width: 14%">
 <col style="width: 4%">
 <col style="width: 17%">
-<col style="width: 15%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3052,101 +3022,101 @@ n_{\text{ef}} = \frac{\left(\sum_i w_i M_{ib}\right)^2}{\sum_i w_i^2 M_{ib}},
 <tr class="odd">
 <td style="text-align: left;">Chek</td>
 <td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">18</td>
 <td style="text-align: right;">12.6</td>
 <td style="text-align: right;">15.0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Lipigas</td>
-<td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">23</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">20.3</td>
-<td style="text-align: right;">23.9</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Latam</td>
-<td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">49</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">17.6</td>
-<td style="text-align: right;">20.1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">BCI</td>
+<td style="text-align: left;">Banco Security</td>
 <td style="text-align: left;">Servicios financieros</td>
+<td style="text-align: right;">90</td>
 <td style="text-align: right;">73</td>
-<td style="text-align: right;">63</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">13.6</td>
-<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">8.6</td>
+<td style="text-align: right;">9.6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Pedidos Ya</td>
+<td style="text-align: left;">Copec</td>
 <td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">34</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">20.6</td>
-<td style="text-align: right;">23.0</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">14.1</td>
+<td style="text-align: right;">16.8</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Spid</td>
 <td style="text-align: left;">Retail</td>
-<td style="text-align: right;">84</td>
-<td style="text-align: right;">76</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">11.6</td>
-<td style="text-align: right;">13.0</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">11.4</td>
+<td style="text-align: right;">12.8</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cabify</td>
+<td style="text-align: left;">Enel</td>
 <td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">74</td>
-<td style="text-align: right;">82</td>
-<td style="text-align: right;">-8</td>
-<td style="text-align: right;">13.3</td>
-<td style="text-align: right;">12.3</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">8.6</td>
+<td style="text-align: right;">8.9</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Pronto</td>
-<td style="text-align: left;">Retail</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">49</td>
+<td style="text-align: left;">Aguas Andinas</td>
+<td style="text-align: left;">Servicios esenciales</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">105</td>
 <td style="text-align: right;">-10</td>
-<td style="text-align: right;">19.5</td>
-<td style="text-align: right;">17.6</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">6.0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Starken</td>
-<td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">69</td>
-<td style="text-align: right;">81</td>
+<td style="text-align: left;">Banco Estado</td>
+<td style="text-align: left;">Servicios financieros</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">-11</td>
+<td style="text-align: right;">20.8</td>
+<td style="text-align: right;">16.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Modelo</td>
+<td style="text-align: left;">Aseguradoras</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">84</td>
 <td style="text-align: right;">-12</td>
-<td style="text-align: right;">14.1</td>
-<td style="text-align: right;">12.4</td>
+<td style="text-align: right;">9.8</td>
+<td style="text-align: right;">8.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pronto</td>
+<td style="text-align: left;">Retail</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">-13</td>
+<td style="text-align: right;">13.0</td>
+<td style="text-align: right;">11.4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Claro</td>
 <td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">48</td>
-<td style="text-align: right;">65</td>
-<td style="text-align: right;">-17</td>
-<td style="text-align: right;">17.8</td>
-<td style="text-align: right;">14.6</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">-21</td>
+<td style="text-align: right;">10.8</td>
+<td style="text-align: right;">8.5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Abastible</td>
 <td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: right;">79</td>
-<td style="text-align: right;">-20</td>
-<td style="text-align: right;">15.9</td>
-<td style="text-align: right;">12.9</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">96</td>
+<td style="text-align: right;">-22</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: right;">7.1</td>
 </tr>
 </tbody>
 </table>
@@ -3160,7 +3130,7 @@ n_{\text{ef}} = \frac{\left(\sum_i w_i M_{ib}\right)^2}{\sum_i w_i^2 M_{ib}},
 <li><strong>La propensidad es estimada.</strong> Si el algoritmo del proveedor dependiera de algo más que el conjunto de industrias usadas —el orden de llegada, por ejemplo—, el modelo lo captaría solo en promedio. La validación de la composición es el respaldo disponible, no una garantía.</li>
 <li><strong>Corrige composición observada, no selección no observada.</strong> Los pesos igualan la distribución de industrias usadas. No corrigen que quien contesta un panel online difiera de quien no lo hace.</li>
 <li><strong>No se corrige la no respuesta ni la cobertura.</strong> Sigue sin haber ponderadores de expansión a la población de Chile, y los resultados siguen sin ser inferencia de diseño.</li>
-<li><strong>El tope de quince queda sin ponderar a propósito.</strong> La prueba de arriba dice que no hace falta. Si en una edición futura esa prueba fallara, habría que ponderar también por ese mecanismo; el control está escrito para que se note.</li>
+<li><strong>El tope de quince queda sin ponderar a propósito.</strong> El puntaje se expresa sobre todos los que conocen la marca; ponderar por la probabilidad de haberla tenido en la batería respondería otra pregunta.</li>
 </ul>
 </section>
 </section>
@@ -3169,7 +3139,7 @@ n_{\text{ef}} = \frac{\left(\sum_i w_i M_{ib}\right)^2}{\sum_i w_i^2 M_{ib}},
 <h2 data-number="2.4" class="anchored" data-anchor-id="limpieza-y-población-de-análisis"><span class="header-section-number">2.4</span> Limpieza y población de análisis</h2>
 <p>Se identifican las preguntas por sus nombres originales: P9 para conocimiento, P10 para orden de preferencia, P11 para compra y P12 para asociaciones. Los identificadores de persona se asignan <strong>después</strong> de aplicar las exclusiones registradas, de modo que ninguna tabla quede desalineada respecto de la base cruda.</p>
 <p>Las exclusiones provienen de la entrega depurada del proveedor —la versión «sin outliers»— y se anotan una sola vez en <code>casos_excluidos.csv</code>. El criterio original mezcla revisiones manuales que no se pueden reproducir; por eso se conserva la lista en vez de intentar recalcularla.</p>
-<p>Cada observación de percepción representa una combinación persona-marca-atributo. Una asociación no marcada se codifica como cero <strong>únicamente dentro del conjunto de marcas mostradas</strong> a esa persona. Se comprueba que no existan duplicados de persona-marca-atributo, que cada preferencia sea coherente con el menú y que los catálogos cubran los códigos observados. Los códigos especiales, como «Ninguna», se excluyen del universo de marcas.</p>
+<p>Cada observación de percepción representa una combinación persona-marca-atributo. En los puntajes de marca, el denominador son todos los que conocen la marca, y quien la conoce sin haberle asociado el atributo cuenta como no asociación (<a href="#sec-ranking" class="quarto-xref">Sección 4</a>). En los modelos que comparan percepciones individuales, una asociación no marcada se codifica como cero <strong>únicamente dentro del conjunto de marcas mostradas</strong> a esa persona. Se comprueba que no existan duplicados de persona-marca-atributo, que cada preferencia sea coherente con el menú y que los catálogos cubran los códigos observados. Los códigos especiales, como «Ninguna», se excluyen del universo de marcas.</p>
 <p>Las tasas de las preguntas generales usan respuestas válidas a cada pregunta, y esas preguntas sí se le hacen a toda la muestra. P1 se resume con respuestas de 5 a 7; P3 con respuestas de 7 a 10; P17 y P20 con respuestas de 4 a 5; P19 considera uso mensual o más frecuente (códigos 4 a 6). P6 distingue explícitamente interés sin costo adicional de aceptación de más tiempo y/o dinero.</p>
 <p>Los recuentos por alternativa no deben confundirse con el denominador de la pregunta. El pipeline conserva las etiquetas y bases para auditar cada indicador.</p>
 </section>
@@ -3443,228 +3413,6 @@ n_{\text{ef}} = \frac{\left(\sum_i w_i M_{ib}\right)^2}{\sum_i w_i^2 M_{ib}},
 </div>
 </div>
 <p>La muestra se levanta con cuotas de sexo, edad, grupo socioeconómico y región. No se aplican ponderadores de expansión. Las cifras describen a las personas entrevistadas; su traslado a la población es una extrapolación que el diseño no respalda formalmente.</p>
-</section>
-<section id="sec-denominadores" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="sec-denominadores"><span class="header-section-number">2.6</span> Denominadores: qué cambió respecto de ediciones anteriores</h2>
-<p>Hasta la revisión documentada en este apéndice, el pipeline usaba dos denominadores incorrectos:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Cantidad</th>
-<th>Denominador anterior</th>
-<th>Denominador correcto</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>% que conoce la marca</td>
-<td>Muestra completa</td>
-<td>Personas asignadas a la industria de la marca</td>
-</tr>
-<tr class="even">
-<td>Puntaje de un atributo</td>
-<td>Personas que conocen la marca</td>
-<td>Personas a las que se les <strong>mostró</strong> la marca en P12</td>
-</tr>
-<tr class="odd">
-<td>Índice EmpatIA</td>
-<td>Personas que conocen la marca</td>
-<td>Personas a las que se les mostró la marca</td>
-</tr>
-<tr class="even">
-<td>Share de primera preferencia</td>
-<td>Muestra completa</td>
-<td>Personas asignadas a la industria de la marca</td>
-</tr>
-<tr class="odd">
-<td>Perfil de una persona</td>
-<td>Marcas que conoce</td>
-<td>Marcas que evaluó</td>
-</tr>
-</tbody>
-</table>
-<p>A eso se suma una tercera corrección, de naturaleza distinta: los asignados a una industria no son una muestra representativa de quienes la usan, y se corrige ponderando por la inversa de la probabilidad de asignación. La <a href="#sec-pesos" class="quarto-xref">Sección 2.3</a> lo documenta.</p>
-<p>El primer error <strong>subestima</strong> todas las cifras de alcance por un factor cercano a cuatro, de manera pareja. El segundo <strong>no</strong> es parejo: castiga a las marcas más conocidas en proporción a su cobertura, que es justamente donde el sorteo recorta más. Por eso corregirlo reordena el ranking y no solo lo reescala.</p>
-<div class="cell" data-tbl-cap="Efecto de la corrección sobre el ranking publicado">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Efecto de la corrección sobre el ranking publicado</caption>
-<colgroup>
-<col style="width: 18%">
-<col style="width: 23%">
-<col style="width: 24%">
-<col style="width: 12%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Marcas en el ranking</th>
-<th style="text-align: right;">Cambio de puesto, mediana</th>
-<th style="text-align: right;">Cambio de puesto, promedio</th>
-<th style="text-align: right;">Cambio máximo</th>
-<th style="text-align: right;">Marcas que no se mueven</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">109</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">11.9</td>
-<td style="text-align: right;">29</td>
-<td style="text-align: right;">2</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell" data-tbl-cap="Las diez marcas que más se mueven al corregir el denominador">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Las diez marcas que más se mueven al corregir el denominador</caption>
-<colgroup>
-<col style="width: 17%">
-<col style="width: 20%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 4%">
-<col style="width: 9%">
-<col style="width: 11%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Marca</th>
-<th style="text-align: left;">Industria</th>
-<th style="text-align: right;">Puesto antes</th>
-<th style="text-align: right;">Puesto ahora</th>
-<th style="text-align: right;">Sube</th>
-<th style="text-align: right;">Cobertura</th>
-<th style="text-align: right;">Evaluadores</th>
-<th style="text-align: right;">Conocedores</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Seguros Falabella</td>
-<td style="text-align: left;">Aseguradoras</td>
-<td style="text-align: right;">62</td>
-<td style="text-align: right;">37</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">0.55</td>
-<td style="text-align: right;">166</td>
-<td style="text-align: right;">300</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Itaú Corpbanca</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: right;">-23</td>
-<td style="text-align: right;">0.98</td>
-<td style="text-align: right;">196</td>
-<td style="text-align: right;">201</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">La Araucana</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">67</td>
-<td style="text-align: right;">90</td>
-<td style="text-align: right;">-23</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">179</td>
-<td style="text-align: right;">181</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Cencopay</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">-24</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">149</td>
-<td style="text-align: right;">150</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Tapp</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: right;">-26</td>
-<td style="text-align: right;">0.98</td>
-<td style="text-align: right;">118</td>
-<td style="text-align: right;">120</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Compraqui</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">47</td>
-<td style="text-align: right;">-26</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">121</td>
-<td style="text-align: right;">121</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Bupa</td>
-<td style="text-align: left;">Aseguradoras</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">40</td>
-<td style="text-align: right;">-27</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">133</td>
-<td style="text-align: right;">134</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Santa María</td>
-<td style="text-align: left;">Aseguradoras</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">71</td>
-<td style="text-align: right;">-27</td>
-<td style="text-align: right;">0.97</td>
-<td style="text-align: right;">143</td>
-<td style="text-align: right;">147</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Chek</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">-28</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">104</td>
-<td style="text-align: right;">104</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Spid</td>
-<td style="text-align: left;">Retail</td>
-<td style="text-align: right;">48</td>
-<td style="text-align: right;">76</td>
-<td style="text-align: right;">-28</td>
-<td style="text-align: right;">0.98</td>
-<td style="text-align: right;">92</td>
-<td style="text-align: right;">94</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Cabify</td>
-<td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">53</td>
-<td style="text-align: right;">82</td>
-<td style="text-align: right;">-29</td>
-<td style="text-align: right;">0.98</td>
-<td style="text-align: right;">168</td>
-<td style="text-align: right;">172</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>La columna «cobertura» explica el movimiento por completo: es la fracción de conocedores a quienes efectivamente se les preguntó. Las marcas con cobertura cercana a 1 —las de nicho— no estaban siendo castigadas y por eso ahora bajan en términos relativos; las de cobertura cercana a 0,5 —las más conocidas— estaban perdiendo la mitad de su puntaje y ahora lo recuperan.</p>
-<p><strong>Qué hacer con los resultados ya presentados.</strong> Las cifras publicadas antes de esta corrección no son comparables con las actuales. La reconciliación marca por marca está en la tabla anterior y en <code>ranking_marcas.csv</code>, que conserva <code>conocimiento</code> y <code>evaluadores</code> en columnas separadas para poder rehacer cualquiera de las dos versiones.</p>
 <div style="page-break-after: always;"></div>
 </section>
 </section>
@@ -4379,13 +4127,13 @@ n_{\text{ef}} = \frac{\left(\sum_i m_i\right)^2}{\sum_i m_i^2},
 <section id="índice-atributos-y-dimensiones" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="índice-atributos-y-dimensiones"><span class="header-section-number">4.1</span> Índice, atributos y dimensiones</h2>
 <p><strong>Cómo se calcula.</strong> Para cada marca <span class="math inline">\(b\)</span> y atributo <span class="math inline">\(a\)</span>:</p>
-<p><span class="math display">\[\hat p_{ba}=\frac{\sum_i w_i\,M_{ib}\,X_{iba}}{\sum_i w_i\,M_{ib}},\]</span></p>
-<p>donde <span class="math inline">\(M_{ib}=1\)</span> si a la persona <span class="math inline">\(i\)</span> <strong>se le mostró</strong> la marca <span class="math inline">\(b\)</span> en la batería de atributos, <span class="math inline">\(X_{iba}=1\)</span> si le asoció el atributo <span class="math inline">\(a\)</span>, y <span class="math inline">\(w_i\)</span> es su peso de exposición (<a href="#sec-pesos" class="quarto-xref">Sección 2.3</a>). Dos cambios respecto de ediciones anteriores: el denominador es <span class="math inline">\(M\)</span> —exposición— y no <span class="math inline">\(K\)</span> —conocimiento—, y las personas entran ponderadas. La <a href="#sec-denominadores" class="quarto-xref">Sección 2.6</a> documenta el primero y la <a href="#sec-pesos" class="quarto-xref">Sección 2.3</a> el segundo.</p>
+<p><span class="math display">\[\hat p_{ba}=\frac{\sum_i w_i\,K_{ib}\,X_{iba}}{\sum_i w_i\,K_{ib}},\]</span></p>
+<p>donde <span class="math inline">\(K_{ib}=1\)</span> si la persona <span class="math inline">\(i\)</span> <strong>conoce</strong> la marca <span class="math inline">\(b\)</span>, <span class="math inline">\(X_{iba}=1\)</span> si le asoció el atributo <span class="math inline">\(a\)</span>, y <span class="math inline">\(w_i\)</span> es su peso de exposición (<a href="#sec-pesos" class="quarto-xref">Sección 2.3</a>). El denominador son todos los que conocen la marca: quien la conoce y no le asoció el atributo —porque no lo marcó o porque la marca no le tocó en la batería— cuenta como no asociación.</p>
 <p>El índice de la edición es:</p>
 <p><span class="math display">\[I_b=w_C\,\hat p_{b,\text{cercana}}+w_T\,\hat p_{b,\text{tecnologica}}.\]</span></p>
 <p>En esta edición <span class="math inline">\(w_C=\)</span> 0.525 y <span class="math inline">\(w_T=\)</span> 0.475. Las salidas ejecutivas multiplican por 100.</p>
 <p><strong>Advertencia de nomenclatura.</strong> El índice <strong>no</strong> promedia los bloques Humanidad y Tecnología como baterías completas: combina dos atributos individuales que llevan esos nombres. Los bloques Humanidad (atributos 1–12), Tecnología (13–19) y EmpatIA (20–25) son clasificaciones conceptuales preexistentes, no factores estimados, y sirven para leer la experiencia, no para construir el índice. Comparten nombre en un caso; no son lo mismo.</p>
-<p>Una marca entra al ranking con al menos 60 <strong>casos efectivos</strong> (<a href="#sec-pesos" class="quarto-xref">Sección 2.3</a>). El umbral se aplica sobre lo que determina la precisión: ni los conocedores, que siempre son más, ni el recuento crudo de evaluadores, que ignora el costo de ponderar. Es un umbral operativo: no garantiza precisión, solo descarta lo manifiestamente inestable.</p>
+<p>Una marca entra al ranking con al menos 60 <strong>casos efectivos</strong> (<a href="#sec-pesos" class="quarto-xref">Sección 2.3</a>). El umbral se aplica sobre lo que determina la precisión, y no sobre el recuento crudo de conocedores, que ignora el costo de ponderar. Es un umbral operativo: no garantiza precisión, solo descarta lo manifiestamente inestable.</p>
 <div class="cell" data-tbl-cap="Peso relativo de cada bloque en la elección (diagnóstico, no ponderadores del índice)">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -4450,6 +4198,15 @@ n_{\text{ef}} = \frac{\left(\sum_i m_i\right)^2}{\sum_i m_i^2},
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Ranking general con márgenes del índice</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col style="width: 10%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 23%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: right;">Puesto</th>
@@ -4457,190 +4214,190 @@ n_{\text{ef}} = \frac{\left(\sum_i m_i\right)^2}{\sum_i m_i^2},
 <th style="text-align: right;">Índice</th>
 <th style="text-align: right;">Desde</th>
 <th style="text-align: right;">Hasta</th>
-<th style="text-align: right;">Evaluadores</th>
 <th style="text-align: right;">Conocedores</th>
+<th style="text-align: right;">Casos efectivos</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">Mercado Libre</td>
-<td style="text-align: right;">41.5</td>
-<td style="text-align: right;">35.5</td>
-<td style="text-align: right;">47.5</td>
-<td style="text-align: right;">220</td>
-<td style="text-align: right;">347</td>
+<td style="text-align: left;">Tenpo</td>
+<td style="text-align: right;">28.3</td>
+<td style="text-align: right;">23.6</td>
+<td style="text-align: right;">33.0</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">208</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Falabella</td>
-<td style="text-align: right;">39.6</td>
-<td style="text-align: right;">33.7</td>
-<td style="text-align: right;">45.5</td>
-<td style="text-align: right;">217</td>
-<td style="text-align: right;">367</td>
+<td style="text-align: left;">Getnet</td>
+<td style="text-align: right;">26.6</td>
+<td style="text-align: right;">20.0</td>
+<td style="text-align: right;">33.2</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">106</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">Lider</td>
-<td style="text-align: right;">35.8</td>
-<td style="text-align: right;">30.3</td>
-<td style="text-align: right;">41.3</td>
-<td style="text-align: right;">217</td>
-<td style="text-align: right;">372</td>
+<td style="text-align: left;">Mercado Libre</td>
+<td style="text-align: right;">24.9</td>
+<td style="text-align: right;">20.5</td>
+<td style="text-align: right;">29.2</td>
+<td style="text-align: right;">347</td>
+<td style="text-align: right;">272</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td style="text-align: left;">Mercado Pago</td>
-<td style="text-align: right;">34.5</td>
-<td style="text-align: right;">29.1</td>
-<td style="text-align: right;">39.8</td>
-<td style="text-align: right;">230</td>
-<td style="text-align: right;">329</td>
+<td style="text-align: left;">Mach</td>
+<td style="text-align: right;">23.5</td>
+<td style="text-align: right;">19.4</td>
+<td style="text-align: right;">27.7</td>
+<td style="text-align: right;">258</td>
+<td style="text-align: right;">225</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
-<td style="text-align: left;">Entel</td>
-<td style="text-align: right;">34.4</td>
-<td style="text-align: right;">27.9</td>
-<td style="text-align: right;">40.9</td>
-<td style="text-align: right;">197</td>
-<td style="text-align: right;">362</td>
+<td style="text-align: left;">GTD</td>
+<td style="text-align: right;">23.4</td>
+<td style="text-align: right;">16.8</td>
+<td style="text-align: right;">29.9</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">61</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
-<td style="text-align: left;">Sodimac</td>
-<td style="text-align: right;">33.7</td>
-<td style="text-align: right;">28.0</td>
-<td style="text-align: right;">39.4</td>
-<td style="text-align: right;">218</td>
-<td style="text-align: right;">365</td>
+<td style="text-align: left;">Copec Pay</td>
+<td style="text-align: right;">23.2</td>
+<td style="text-align: right;">18.0</td>
+<td style="text-align: right;">28.5</td>
+<td style="text-align: right;">151</td>
+<td style="text-align: right;">132</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">Red Salud</td>
-<td style="text-align: right;">32.3</td>
-<td style="text-align: right;">26.2</td>
-<td style="text-align: right;">38.4</td>
-<td style="text-align: right;">170</td>
-<td style="text-align: right;">288</td>
+<td style="text-align: left;">Falabella</td>
+<td style="text-align: right;">23.2</td>
+<td style="text-align: right;">19.1</td>
+<td style="text-align: right;">27.4</td>
+<td style="text-align: right;">367</td>
+<td style="text-align: right;">284</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">8</td>
-<td style="text-align: left;">Jumbo</td>
-<td style="text-align: right;">31.8</td>
-<td style="text-align: right;">26.2</td>
-<td style="text-align: right;">37.4</td>
-<td style="text-align: right;">218</td>
-<td style="text-align: right;">372</td>
+<td style="text-align: left;">Mercado Pago</td>
+<td style="text-align: right;">23.0</td>
+<td style="text-align: right;">18.9</td>
+<td style="text-align: right;">27.1</td>
+<td style="text-align: right;">329</td>
+<td style="text-align: right;">283</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">9</td>
-<td style="text-align: left;">Copec</td>
-<td style="text-align: right;">31.4</td>
-<td style="text-align: right;">24.6</td>
-<td style="text-align: right;">38.3</td>
-<td style="text-align: right;">198</td>
-<td style="text-align: right;">343</td>
+<td style="text-align: left;">Blue Express</td>
+<td style="text-align: right;">22.5</td>
+<td style="text-align: right;">17.4</td>
+<td style="text-align: right;">27.6</td>
+<td style="text-align: right;">216</td>
+<td style="text-align: right;">149</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">Movistar</td>
-<td style="text-align: right;">29.9</td>
-<td style="text-align: right;">23.9</td>
-<td style="text-align: right;">35.8</td>
-<td style="text-align: right;">196</td>
-<td style="text-align: right;">347</td>
+<td style="text-align: left;">Lider</td>
+<td style="text-align: right;">22.3</td>
+<td style="text-align: right;">18.4</td>
+<td style="text-align: right;">26.2</td>
+<td style="text-align: right;">372</td>
+<td style="text-align: right;">288</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">11</td>
-<td style="text-align: left;">Banco Estado</td>
-<td style="text-align: right;">29.8</td>
-<td style="text-align: right;">24.5</td>
-<td style="text-align: right;">35.1</td>
-<td style="text-align: right;">231</td>
-<td style="text-align: right;">378</td>
+<td style="text-align: left;">UC Christus</td>
+<td style="text-align: right;">21.9</td>
+<td style="text-align: right;">16.7</td>
+<td style="text-align: right;">27.1</td>
+<td style="text-align: right;">164</td>
+<td style="text-align: right;">160</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">12</td>
-<td style="text-align: left;">Tenpo</td>
-<td style="text-align: right;">29.7</td>
-<td style="text-align: right;">24.9</td>
-<td style="text-align: right;">34.5</td>
-<td style="text-align: right;">230</td>
-<td style="text-align: right;">240</td>
+<td style="text-align: left;">Sodimac</td>
+<td style="text-align: right;">20.8</td>
+<td style="text-align: right;">16.7</td>
+<td style="text-align: right;">24.8</td>
+<td style="text-align: right;">365</td>
+<td style="text-align: right;">283</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">13</td>
-<td style="text-align: left;">Wom</td>
-<td style="text-align: right;">27.8</td>
-<td style="text-align: right;">21.5</td>
-<td style="text-align: right;">34.1</td>
-<td style="text-align: right;">198</td>
-<td style="text-align: right;">335</td>
+<td style="text-align: left;">Cencopay</td>
+<td style="text-align: right;">20.4</td>
+<td style="text-align: right;">14.8</td>
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">132</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">14</td>
-<td style="text-align: left;">Dr. Simi</td>
-<td style="text-align: right;">27.8</td>
-<td style="text-align: right;">22.7</td>
-<td style="text-align: right;">32.8</td>
-<td style="text-align: right;">217</td>
-<td style="text-align: right;">366</td>
+<td style="text-align: left;">Jumbo</td>
+<td style="text-align: right;">20.2</td>
+<td style="text-align: right;">16.2</td>
+<td style="text-align: right;">24.2</td>
+<td style="text-align: right;">372</td>
+<td style="text-align: right;">289</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">15</td>
-<td style="text-align: left;">Mach</td>
-<td style="text-align: right;">26.9</td>
-<td style="text-align: right;">22.3</td>
-<td style="text-align: right;">31.4</td>
-<td style="text-align: right;">229</td>
-<td style="text-align: right;">258</td>
+<td style="text-align: left;">Bupa</td>
+<td style="text-align: right;">19.1</td>
+<td style="text-align: right;">13.8</td>
+<td style="text-align: right;">24.5</td>
+<td style="text-align: right;">134</td>
+<td style="text-align: right;">130</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">16</td>
-<td style="text-align: left;">Getnet</td>
-<td style="text-align: right;">26.7</td>
-<td style="text-align: right;">20.1</td>
-<td style="text-align: right;">33.3</td>
-<td style="text-align: right;">118</td>
-<td style="text-align: right;">119</td>
+<td style="text-align: left;">Red Salud</td>
+<td style="text-align: right;">18.8</td>
+<td style="text-align: right;">14.7</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">288</td>
+<td style="text-align: right;">276</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">17</td>
-<td style="text-align: left;">Ali Express</td>
-<td style="text-align: right;">25.1</td>
-<td style="text-align: right;">20.3</td>
-<td style="text-align: right;">30.0</td>
-<td style="text-align: right;">216</td>
-<td style="text-align: right;">308</td>
+<td style="text-align: left;">Tapp</td>
+<td style="text-align: right;">18.5</td>
+<td style="text-align: right;">12.4</td>
+<td style="text-align: right;">24.6</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">102</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">18</td>
-<td style="text-align: left;">Uber</td>
-<td style="text-align: right;">25.1</td>
-<td style="text-align: right;">19.3</td>
-<td style="text-align: right;">30.9</td>
-<td style="text-align: right;">198</td>
-<td style="text-align: right;">307</td>
+<td style="text-align: left;">Compraqui</td>
+<td style="text-align: right;">17.9</td>
+<td style="text-align: right;">12.0</td>
+<td style="text-align: right;">23.8</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: right;">104</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">19</td>
-<td style="text-align: left;">Blue Express</td>
-<td style="text-align: right;">24.9</td>
-<td style="text-align: right;">19.5</td>
-<td style="text-align: right;">30.4</td>
-<td style="text-align: right;">199</td>
-<td style="text-align: right;">216</td>
+<td style="text-align: left;">Entel</td>
+<td style="text-align: right;">17.9</td>
+<td style="text-align: right;">13.9</td>
+<td style="text-align: right;">21.9</td>
+<td style="text-align: right;">362</td>
+<td style="text-align: right;">228</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">20</td>
-<td style="text-align: left;">Paris</td>
-<td style="text-align: right;">24.4</td>
-<td style="text-align: right;">19.4</td>
-<td style="text-align: right;">29.4</td>
-<td style="text-align: right;">219</td>
-<td style="text-align: right;">364</td>
+<td style="text-align: left;">Integramedica</td>
+<td style="text-align: right;">17.7</td>
+<td style="text-align: right;">13.0</td>
+<td style="text-align: right;">22.4</td>
+<td style="text-align: right;">211</td>
+<td style="text-align: right;">203</td>
 </tr>
 </tbody>
 </table>
@@ -4661,62 +4418,62 @@ n_{\text{ef}} = \frac{\left(\sum_i m_i\right)^2}{\sum_i m_i^2},
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">Mercado Libre</td>
-<td style="text-align: right;">41.5</td>
+<td style="text-align: left;">Tenpo</td>
+<td style="text-align: right;">28.3</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Falabella</td>
-<td style="text-align: right;">39.6</td>
+<td style="text-align: left;">Getnet</td>
+<td style="text-align: right;">26.6</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">Lider</td>
-<td style="text-align: right;">35.8</td>
+<td style="text-align: left;">Mercado Libre</td>
+<td style="text-align: right;">24.9</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td style="text-align: left;">Mercado Pago</td>
-<td style="text-align: right;">34.5</td>
+<td style="text-align: left;">Mach</td>
+<td style="text-align: right;">23.5</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
-<td style="text-align: left;">Entel</td>
-<td style="text-align: right;">34.4</td>
+<td style="text-align: left;">GTD</td>
+<td style="text-align: right;">23.4</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
-<td style="text-align: left;">Sodimac</td>
-<td style="text-align: right;">33.7</td>
+<td style="text-align: left;">Copec Pay</td>
+<td style="text-align: right;">23.2</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">Red Salud</td>
-<td style="text-align: right;">32.3</td>
+<td style="text-align: left;">Falabella</td>
+<td style="text-align: right;">23.2</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">8</td>
-<td style="text-align: left;">Jumbo</td>
-<td style="text-align: right;">31.8</td>
+<td style="text-align: left;">Mercado Pago</td>
+<td style="text-align: right;">23.0</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">9</td>
-<td style="text-align: left;">Copec</td>
-<td style="text-align: right;">31.4</td>
+<td style="text-align: left;">Blue Express</td>
+<td style="text-align: right;">22.5</td>
 <td style="text-align: right;">9</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">Movistar</td>
-<td style="text-align: right;">29.9</td>
+<td style="text-align: left;">Lider</td>
+<td style="text-align: right;">22.3</td>
 <td style="text-align: right;">9</td>
 </tr>
 </tbody>
@@ -4730,12 +4487,12 @@ n_{\text{ef}} = \frac{\left(\sum_i m_i\right)^2}{\sum_i m_i^2},
 <p>Las proporciones por atributo usan <strong>intervalos de Wilson</strong> al 95%, que evitan un margen nulo cuando una proporción es cero o uno:</p>
 <p><span class="math display">\[
 \frac{\hat p + \frac{z^2}{2n} \pm z\sqrt{\frac{\hat p(1-\hat p)}{n} + \frac{z^2}{4n^2}}}{1 + \frac{z^2}{n}},
-\qquad n = \text{evaluadores}.
+\qquad n = \text{conocedores}.
 \]</span></p>
 <p>El índice usa la varianza empírica de la combinación individual <span class="math inline">\(w_C X_C + w_T X_T\)</span>, preservando la covarianza entre ambas respuestas en vez de sumar varianzas por separado.</p>
 <p><strong>Por qué no basta con la fórmula binomial.</strong> Una misma persona evalúa hasta quince marcas. Si es generosa marcando atributos, sube a la vez el puntaje de todas las marcas que evaluó. Tratar cada par persona-marca como independiente subestimaría el margen. El cálculo mantiene juntas todas las respuestas de una misma persona: la influencia de la persona <span class="math inline">\(i\)</span> sobre la proporción de la marca <span class="math inline">\(b\)</span> es</p>
-<p><span class="math display">\[u_{ib} = \frac{w_i\,M_{ib}\,(X_{ib} - \hat p_b)}{\sum_j w_j M_{jb}},\]</span></p>
-<p>y el error se obtiene sumando <span class="math inline">\(u_{ib}^2\)</span> sobre personas, no sobre pares. Es la linealización del cociente ponderado: ponderar y después usar la fórmula sin ponderar subestimaría el error. Como cada fila del cálculo es una persona completa, la dependencia entre las marcas que ella evalúa queda incorporada sin modelarla explícitamente.</p>
+<p><span class="math display">\[u_{ib} = \frac{w_i\,K_{ib}\,(X_{ib} - \hat p_b)}{\sum_j w_j K_{jb}},\]</span></p>
+<p>y el error se obtiene sumando <span class="math inline">\(u_{ib}^2\)</span> sobre personas, no sobre pares. Es la linealización del cociente ponderado: ponderar y después usar la fórmula sin ponderar subestimaría el error. Como cada fila del cálculo es una persona completa, la dependencia entre las marcas que ella conoce queda incorporada sin modelarla explícitamente.</p>
 </section>
 <section id="sec-referencias" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="sec-referencias"><span class="header-section-number">4.4</span> Las tres referencias: categoría, industria y estudio</h2>
@@ -4793,11 +4550,11 @@ n_{\text{ef}} = \frac{\left(\sum_i m_i\right)^2}{\sum_i m_i^2},
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">109</td>
+<td style="text-align: right;">110</td>
 <td style="text-align: right;">5</td>
-<td style="text-align: right;">109</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">109</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">110</td>
 </tr>
 </tbody>
 </table>
@@ -5130,7 +4887,7 @@ D_j = 100\left(\frac{\text{usan}_j}{\text{conocen}_j} - \hat\pi_j\right)
 <p><strong>Cómo se calcula la derivada.</strong> Se construye el menú con las marcas que la persona <strong>evaluó</strong> (<a href="#sec-diseno" class="quarto-xref">Sección 2.2</a>). En la etapa uno se compara la primera preferida contra todo el menú; en la etapa dos se retira la primera, y en la tercera las dos anteriores. Solo se usan etapas con una elegida válida y al menos dos alternativas.</p>
 <p><span class="math display">\[P(Y_{is}=b\mid C_{is})=\frac{\exp(X_{ib}&#39;\beta)}{\sum_{j\in C_{is}}\exp(X_{ij}&#39;\beta)}.\]</span></p>
 <p>Se estima con logit condicional, un estrato por etapa y errores robustos agrupados por persona (<code>survival::clogit</code>, método de Efron). Con una sola elegida por estrato la contribución de verosimilitud coincide con la exacta y admite varianza robusta.</p>
-<p><strong>Por qué el menú son las evaluadas y no las conocidas.</strong> A las marcas conocidas pero no mostradas nunca se les preguntó por atributos: entrarían al modelo con 25 ceros que la persona jamás declaró. Y como el sorteo prioriza a las marcas menos conocidas, esos ceros falsos caerían sobre las marcas grandes —justo las que más compiten por la preferencia—, sesgando los coeficientes hacia cero de manera desigual.</p>
+<p><strong>Por qué el menú son las evaluadas y no las conocidas.</strong> A las marcas conocidas pero no mostradas nunca se les preguntó por atributos: entrarían al modelo con 25 ceros que la persona jamás declaró. El modelo compara percepciones individuales, y donde no hubo pregunta no hay percepción que comparar.</p>
 <p><strong>Lo que cuesta.</strong> Se pierden las personas cuya marca preferida no les tocó evaluar. La comparación de esas personas no entra al modelo. Es una pérdida de eficiencia conocida y documentada, preferible a una fila inventada.</p>
 <div class="cell" data-tbl-cap="Importancia declarada frente a derivada">
 <div class="cell-output-display">
@@ -6099,56 +5856,63 @@ D_j = 100\left(\frac{\text{usan}_j}{\text{conocen}_j} - \hat\pi_j\right)
 <table class="caption-top table table-sm table-striped small">
 <caption>Reparto de los atributos entre cuadrantes, para las marcas del top 5</caption>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 15%">
+<col style="width: 17%">
+<col style="width: 14%">
 <col style="width: 13%">
-<col style="width: 37%">
-<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Marca</th>
+<th style="text-align: right;">Debilidades</th>
 <th style="text-align: right;">Fortalezas</th>
+<th style="text-align: right;">Latentes</th>
 <th style="text-align: right;">Recursos</th>
 <th style="text-align: right;">Sin importancia declarada</th>
-<th style="text-align: right;">Latentes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Entel</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: left;">GTD</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Falabella</td>
+<td style="text-align: left;">Getnet</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">11</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Lider</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: left;">Mach</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Mercado Libre</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">2</td>
 <td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Mercado Pago</td>
 <td style="text-align: right;">12</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tenpo</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 </tr>
 </tbody>
 </table>
@@ -6176,11 +5940,11 @@ D_j = 100\left(\frac{\text{usan}_j}{\text{conocen}_j} - \hat\pi_j\right)
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">2725</td>
-<td style="text-align: right;">571</td>
-<td style="text-align: right;">177</td>
-<td style="text-align: right;">737</td>
-<td style="text-align: right;">233</td>
+<td style="text-align: right;">2750</td>
+<td style="text-align: right;">598</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: right;">722</td>
+<td style="text-align: right;">159</td>
 </tr>
 </tbody>
 </table>
@@ -6207,9 +5971,9 @@ A_{ba} = 100\left[\hat p_{ba} - \left(\bar p_{b\cdot} + \bar p_{\cdot a} - \bar 
 <table class="caption-top table table-sm table-striped small">
 <caption>Mayor apropiación por categoría (primeras categorías del listado)</caption>
 <colgroup>
-<col style="width: 23%">
-<col style="width: 16%">
-<col style="width: 37%">
+<col style="width: 24%">
+<col style="width: 12%">
+<col style="width: 38%">
 <col style="width: 11%">
 <col style="width: 11%">
 </colgroup>
@@ -6224,87 +5988,87 @@ A_{ba} = 100\left[\hat p_{ba} - \left(\bar p_{b\cdot} + \bar p_{\cdot a} - \bar 
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Internet y Telefonía</td>
+<td style="text-align: left;">GTD</td>
+<td style="text-align: left;">Es tecnológica</td>
+<td style="text-align: right;">17.1</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Servicios de pago</td>
+<td style="text-align: left;">Getnet</td>
+<td style="text-align: left;">Es tecnológica</td>
+<td style="text-align: right;">14.8</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Distribución y logística</td>
+<td style="text-align: left;">Blue Express</td>
+<td style="text-align: left;">Tiene un diseño moderno</td>
+<td style="text-align: right;">13.6</td>
+<td style="text-align: right;">69</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mejoramiento del hogar</td>
+<td style="text-align: left;">Ikea</td>
+<td style="text-align: left;">Tiene un diseño moderno</td>
+<td style="text-align: right;">12.7</td>
+<td style="text-align: right;">69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mejoramiento del hogar</td>
+<td style="text-align: left;">Sodimac</td>
+<td style="text-align: left;">Tiene presencia en todo Chile</td>
+<td style="text-align: right;">11.8</td>
+<td style="text-align: right;">81</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tiendas de conveniencia</td>
+<td style="text-align: left;">Spid</td>
+<td style="text-align: left;">Sus procesos son automatizados</td>
+<td style="text-align: right;">10.7</td>
+<td style="text-align: right;">73</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Bancos</td>
 <td style="text-align: left;">Banco Estado</td>
 <td style="text-align: left;">Tiene presencia en todo Chile</td>
-<td style="text-align: right;">24.2</td>
+<td style="text-align: right;">10.3</td>
 <td style="text-align: right;">81</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Tiendas de conveniencia</td>
 <td style="text-align: left;">Pronto</td>
 <td style="text-align: left;">Tiene presencia en todo Chile</td>
-<td style="text-align: right;">22.3</td>
+<td style="text-align: right;">10.3</td>
 <td style="text-align: right;">81</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Mejoramiento del hogar</td>
-<td style="text-align: left;">Sodimac</td>
-<td style="text-align: left;">Tiene presencia en todo Chile</td>
-<td style="text-align: right;">18.6</td>
-<td style="text-align: right;">81</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Distribución y logística</td>
-<td style="text-align: left;">Blue Express</td>
-<td style="text-align: left;">Tiene un diseño moderno</td>
-<td style="text-align: right;">16.5</td>
-<td style="text-align: right;">69</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Farmacias</td>
-<td style="text-align: left;">Dr. Simi</td>
-<td style="text-align: left;">Es cercana</td>
-<td style="text-align: right;">15.1</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Marketplace</td>
 <td style="text-align: left;">Ripley</td>
 <td style="text-align: left;">Me permite contactarla a través de …</td>
-<td style="text-align: right;">13.9</td>
-<td style="text-align: right;">81</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Distribución y logística</td>
-<td style="text-align: left;">Correos de Chile</td>
-<td style="text-align: left;">Tiene presencia en todo Chile</td>
-<td style="text-align: right;">13.6</td>
+<td style="text-align: right;">9.2</td>
 <td style="text-align: right;">81</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Mejoramiento del hogar</td>
-<td style="text-align: left;">Ikea</td>
-<td style="text-align: left;">Tiene un diseño moderno</td>
-<td style="text-align: right;">13.6</td>
-<td style="text-align: right;">69</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Seguros</td>
-<td style="text-align: left;">ACHS</td>
+<td style="text-align: left;">Tiendas de conveniencia</td>
+<td style="text-align: left;">UPA</td>
 <td style="text-align: left;">Tiene presencia en todo Chile</td>
-<td style="text-align: right;">13.2</td>
+<td style="text-align: right;">8.5</td>
 <td style="text-align: right;">81</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Servicios de pago</td>
 <td style="text-align: left;">Caja Vecina</td>
 <td style="text-align: left;">Es cercana</td>
-<td style="text-align: right;">13.2</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Servicios de pago</td>
-<td style="text-align: left;">Getnet</td>
-<td style="text-align: left;">Es tecnológica</td>
-<td style="text-align: right;">13.1</td>
+<td style="text-align: right;">8.4</td>
 <td style="text-align: right;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Marketplace</td>
-<td style="text-align: left;">Falabella</td>
-<td style="text-align: left;">Tiene presencia en todo Chile</td>
-<td style="text-align: right;">12.7</td>
+<td style="text-align: left;">Hites</td>
+<td style="text-align: left;">Me permite contactarla a través de …</td>
+<td style="text-align: right;">8.4</td>
 <td style="text-align: right;">81</td>
 </tr>
 </tbody>
@@ -6626,7 +6390,7 @@ I^{\text{pond}}_j &amp;= \textstyle\sum_{k} \beta_k\, p_{jk} \\
 I^{\text{modelo}}_j &amp;= \tfrac{1}{n_j}\textstyle\sum_{i \in C_j} \hat{\theta}_{ij}
 \end{aligned}
 \]</span></p>
-<p>donde <span class="math inline">\(w_c, w_t\)</span> son los ponderadores publicados del año; <span class="math inline">\(\beta_k\)</span> el coeficiente del atributo <span class="math inline">\(k\)</span> en el modelo de preferencias; <span class="math inline">\(C_j\)</span> el conjunto de personas que evaluaron la marca <span class="math inline">\(j\)</span>; <span class="math inline">\(n_j = |C_j|\)</span>; y <span class="math inline">\(\hat{\theta}_{ij}\)</span> la puntuación esperada a posteriori del modelo de ítems.</p>
+<p>donde <span class="math inline">\(w_c, w_t\)</span> son los ponderadores publicados del año; <span class="math inline">\(\beta_k\)</span> el coeficiente del atributo <span class="math inline">\(k\)</span> en el modelo de preferencias; <span class="math inline">\(C_j\)</span> el conjunto de personas que conocen la marca <span class="math inline">\(j\)</span>; <span class="math inline">\(n_j = |C_j|\)</span>; y <span class="math inline">\(\hat{\theta}_{ij}\)</span> la puntuación esperada a posteriori del modelo de ítems. A quien conoce la marca y no la tuvo en la batería le corresponde la puntuación de no asociarle ningún atributo, igual que en <span class="math inline">\(p_{jk}\)</span> cuenta como no asociación.</p>
 </section>
 <section id="criterio-de-comparación" class="level2" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="criterio-de-comparación"><span class="header-section-number">8.6</span> Criterio de comparación</h2>
@@ -6661,27 +6425,27 @@ I^{\text{modelo}}_j &amp;= \tfrac{1}{n_j}\textstyle\sum_{i \in C_j} \hat{\theta}
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Promedio de todos los atributos</td>
-<td style="text-align: right;">0.732</td>
-<td style="text-align: right;">0.690</td>
-<td style="text-align: right;">0.845</td>
+<td style="text-align: right;">0.471</td>
+<td style="text-align: right;">0.521</td>
+<td style="text-align: right;">0.753</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Indice publicado (2 atributos)</td>
-<td style="text-align: right;">0.686</td>
-<td style="text-align: right;">0.663</td>
-<td style="text-align: right;">0.820</td>
+<td style="text-align: left;">Todos los atributos ponderados por la eleccion</td>
+<td style="text-align: right;">0.450</td>
+<td style="text-align: right;">0.471</td>
+<td style="text-align: right;">0.757</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Todos los atributos ponderados por la eleccion</td>
-<td style="text-align: right;">0.715</td>
-<td style="text-align: right;">0.641</td>
-<td style="text-align: right;">0.860</td>
+<td style="text-align: left;">Indice publicado (2 atributos)</td>
+<td style="text-align: right;">0.407</td>
+<td style="text-align: right;">0.458</td>
+<td style="text-align: right;">0.756</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Puntuacion del modelo de items</td>
-<td style="text-align: right;">0.690</td>
-<td style="text-align: right;">0.630</td>
-<td style="text-align: right;">0.883</td>
+<td style="text-align: right;">0.301</td>
+<td style="text-align: right;">0.368</td>
+<td style="text-align: right;">0.766</td>
 </tr>
 </tbody>
 </table>
@@ -6706,7 +6470,7 @@ I^{\text{modelo}}_j &amp;= \tfrac{1}{n_j}\textstyle\sum_{i \in C_j} \hat{\theta}
 <table class="caption-top table table-sm table-striped small">
 <caption>Marcas con mayor cambio de puesto</caption>
 <colgroup>
-<col style="width: 20%">
+<col style="width: 21%">
 <col style="width: 25%">
 <col style="width: 5%">
 <col style="width: 19%">
@@ -6728,121 +6492,121 @@ I^{\text{modelo}}_j &amp;= \tfrac{1}{n_j}\textstyle\sum_{i \in C_j} \hat{\theta}
 <td style="text-align: left;">Transbank</td>
 <td style="text-align: left;">Servicios financieros</td>
 <td style="text-align: right;">342</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: right;">80</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">88</td>
 <td style="text-align: right;">-36</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Abastible</td>
-<td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">326</td>
-<td style="text-align: right;">79</td>
-<td style="text-align: right;">48</td>
-<td style="text-align: right;">31</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Caja Vecina</td>
 <td style="text-align: left;">Servicios financieros</td>
 <td style="text-align: right;">352</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">-28</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Compraqui</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">121</td>
-<td style="text-align: right;">47</td>
-<td style="text-align: right;">75</td>
-<td style="text-align: right;">-28</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">-35</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Starken</td>
-<td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">322</td>
-<td style="text-align: right;">81</td>
-<td style="text-align: right;">55</td>
-<td style="text-align: right;">26</td>
+<td style="text-align: left;">Cruz verde</td>
+<td style="text-align: left;">Retail</td>
+<td style="text-align: right;">359</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">32</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Cabify</td>
+<td style="text-align: left;">Servicios esenciales</td>
+<td style="text-align: right;">172</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">-30</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Salcobrand</td>
 <td style="text-align: left;">Retail</td>
 <td style="text-align: right;">349</td>
-<td style="text-align: right;">68</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">26</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Chek</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">104</td>
-<td style="text-align: right;">60</td>
 <td style="text-align: right;">86</td>
-<td style="text-align: right;">-26</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Easy</td>
-<td style="text-align: left;">Retail</td>
-<td style="text-align: right;">352</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">25</td>
+<td style="text-align: right;">61</td>
 <td style="text-align: right;">25</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Farmacias Ahumada</td>
-<td style="text-align: left;">Retail</td>
-<td style="text-align: right;">343</td>
-<td style="text-align: right;">97</td>
-<td style="text-align: right;">74</td>
-<td style="text-align: right;">23</td>
-</tr>
 <tr class="even">
-<td style="text-align: left;">Cencopay</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">58</td>
-<td style="text-align: right;">-23</td>
+<td style="text-align: left;">Sky Airline</td>
+<td style="text-align: left;">Servicios esenciales</td>
+<td style="text-align: right;">262</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">25</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Santa Isabel</td>
 <td style="text-align: left;">Retail</td>
 <td style="text-align: right;">363</td>
-<td style="text-align: right;">46</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">42</td>
 <td style="text-align: right;">22</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Getnet</td>
-<td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">119</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">38</td>
+<td style="text-align: left;">Rappi</td>
+<td style="text-align: left;">Servicios esenciales</td>
+<td style="text-align: right;">221</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">75</td>
 <td style="text-align: right;">-22</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Sky Airline</td>
-<td style="text-align: left;">Servicios esenciales</td>
-<td style="text-align: right;">262</td>
-<td style="text-align: right;">89</td>
-<td style="text-align: right;">68</td>
+<td style="text-align: left;">Compraqui</td>
+<td style="text-align: left;">Servicios financieros</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">-22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BNP Paribas Cardif</td>
+<td style="text-align: left;">Aseguradoras</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Farmacias Ahumada</td>
+<td style="text-align: left;">Retail</td>
+<td style="text-align: right;">343</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">86</td>
 <td style="text-align: right;">21</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Tenpo</td>
+<td style="text-align: left;">Banco de Chile</td>
 <td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">240</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: right;">-20</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">21</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Tapp</td>
+<td style="text-align: left;">Easy</td>
+<td style="text-align: left;">Retail</td>
+<td style="text-align: right;">352</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chilexpress</td>
+<td style="text-align: left;">Servicios esenciales</td>
+<td style="text-align: right;">339</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chek</td>
 <td style="text-align: left;">Servicios financieros</td>
-<td style="text-align: right;">120</td>
-<td style="text-align: right;">43</td>
-<td style="text-align: right;">63</td>
-<td style="text-align: right;">-20</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">-19</td>
 </tr>
 </tbody>
 </table>
@@ -6891,7 +6655,7 @@ I^{\text{modelo}}_j &amp;= \tfrac{1}{n_j}\textstyle\sum_{i \in C_j} \hat{\theta}
 <h2 data-number="9.1" class="anchored" data-anchor-id="construcción"><span class="header-section-number">9.1</span> Construcción</h2>
 <p>El ranking completo se recalcula <strong>dentro de cada público</strong>: los puntajes, el índice y el puesto se estiman usando solo a las personas de ese grupo. No se reordena el ranking general.</p>
 <p>Los públicos provienen de tres clasificaciones —género, generación, grupo socioeconómico— que <strong>no son excluyentes entre sí</strong>: una misma persona pertenece a un nivel de cada una. Las cifras de distintas clasificaciones no se suman.</p>
-<p>Una marca entra al ranking de un público solo si al menos 60 personas de ese público la conocen. Bajo ese umbral el puntaje tiene un margen tan amplio que el puesto deja de ser informativo.</p>
+<p>Una marca entra al ranking de un público con el mismo umbral del ranking general: al menos 60 casos efectivos entre las personas de ese público que la conocen. Bajo ese umbral el puntaje tiene un margen tan amplio que el puesto deja de ser informativo.</p>
 <div class="cell" data-tbl-cap="Cobertura del ranking por público">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -7008,27 +6772,27 @@ G_{as} = \hat p_{as}^{(m)} - \frac{1}{|R_s|}\sum_{r \in R_s} \hat p_{as}^{(r)}
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Genero</td>
-<td style="text-align: right;">4375</td>
-<td style="text-align: right;">1296</td>
-<td style="text-align: right;">0.30</td>
-<td style="text-align: right;">3.52</td>
-<td style="text-align: right;">4.89</td>
+<td style="text-align: right;">4950</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">2.56</td>
+<td style="text-align: right;">3.20</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Generacion</td>
-<td style="text-align: right;">4325</td>
-<td style="text-align: right;">1296</td>
-<td style="text-align: right;">0.30</td>
-<td style="text-align: right;">3.53</td>
-<td style="text-align: right;">5.08</td>
+<td style="text-align: right;">4925</td>
+<td style="text-align: right;">1082</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">2.56</td>
+<td style="text-align: right;">3.28</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">GSE</td>
-<td style="text-align: right;">1025</td>
-<td style="text-align: right;">228</td>
-<td style="text-align: right;">0.23</td>
-<td style="text-align: right;">3.81</td>
-<td style="text-align: right;">4.54</td>
+<td style="text-align: right;">3825</td>
+<td style="text-align: right;">588</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">3.27</td>
+<td style="text-align: right;">3.61</td>
 </tr>
 </tbody>
 </table>
@@ -7068,10 +6832,10 @@ G_{as} \approx \underbrace{d_1 u_{1a}}_{\text{perfil del atributo}} \times
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">80</td>
-<td style="text-align: right;">0.869</td>
-<td style="text-align: right;">74</td>
-<td style="text-align: right;">0.194</td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">0.827</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">0.276</td>
 </tr>
 </tbody>
 </table>
@@ -7096,15 +6860,15 @@ G_{as} \approx \underbrace{d_1 u_{1a}}_{\text{perfil del atributo}} \times
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Eje 1</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0.871</td>
-<td style="text-align: right;">0.688</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.922</td>
+<td style="text-align: right;">0.726</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Eje 2</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0.350</td>
-<td style="text-align: right;">-0.095</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.519</td>
+<td style="text-align: right;">-0.082</td>
 </tr>
 </tbody>
 </table>
@@ -7127,11 +6891,11 @@ G_{as} \approx \underbrace{d_1 u_{1a}}_{\text{perfil del atributo}} \times
 <h1 data-number="11"><span class="header-section-number">11</span> Perfiles de personas que las segmentaciones habituales no ven</h1>
 <section id="unidad-y-espacio" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="unidad-y-espacio"><span class="header-section-number">11.1</span> Unidad y espacio</h2>
-<p>Para la persona <span class="math inline">\(i\)</span> que conoce <span class="math inline">\(M_i\)</span> marcas, su perfil es el vector de proporciones</p>
+<p>Para la persona <span class="math inline">\(i\)</span> que evaluó <span class="math inline">\(n_i\)</span> marcas, su perfil es el vector de proporciones</p>
 <p><span class="math display">\[
-x_{ik} = \frac{1}{M_i}\sum_{j \in C_i} y_{ijk}
+x_{ik} = \frac{1}{n_i}\sum_{j \in C_i} y_{ijk}
 \]</span></p>
-<p>donde <span class="math inline">\(y_{ijk}=1\)</span> si asocia el atributo <span class="math inline">\(k\)</span> a la marca <span class="math inline">\(j\)</span>. Se exige <span class="math inline">\(M_i \ge 8\)</span>.</p>
+<p>donde <span class="math inline">\(y_{ijk}=1\)</span> si asocia el atributo <span class="math inline">\(k\)</span> a la marca <span class="math inline">\(j\)</span>. Se exige <span class="math inline">\(n_i \ge 8\)</span>.</p>
 <p>El primer componente de <span class="math inline">\(x\)</span> recoge la <strong>generosidad al marcar</strong>, no el contenido. Como interesa la forma del perfil, cada persona se centra y escala en su propia distribución:</p>
 <p><span class="math display">\[
 z_{ik} = \frac{x_{ik} - \bar{x}_{i\cdot}}{s_i}
@@ -7377,8 +7141,8 @@ f(z) = \sum_{g=1}^{G} \pi_g \, \phi(z \mid \mu_g, \Sigma_g), \qquad \sum_g \pi_g
 <tr class="odd">
 <td style="text-align: right;">5</td>
 <td style="text-align: left;">VEI</td>
-<td style="text-align: right;">0.932</td>
-<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.933</td>
+<td style="text-align: right;">5</td>
 </tr>
 </tbody>
 </table>
@@ -7409,16 +7173,16 @@ f(z) = \sum_{g=1}^{G} \pi_g \, \phi(z \mid \mu_g, \Sigma_g), \qquad \sum_g \pi_g
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Cruz verde</td>
-<td style="text-align: right;">0.915</td>
-<td style="text-align: right;">0.085</td>
+<td style="text-align: right;">0.917</td>
+<td style="text-align: right;">0.083</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Farmacias Ahumada</td>
-<td style="text-align: right;">0.984</td>
-<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.985</td>
+<td style="text-align: right;">0.015</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0</td>
@@ -7433,26 +7197,26 @@ f(z) = \sum_{g=1}^{G} \pi_g \, \phi(z \mid \mu_g, \Sigma_g), \qquad \sum_g \pi_g
 </tr>
 <tr class="even">
 <td style="text-align: left;">Salcobrand</td>
-<td style="text-align: right;">0.984</td>
-<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.985</td>
+<td style="text-align: right;">0.014</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Easy</td>
-<td style="text-align: right;">0.720</td>
-<td style="text-align: right;">0.087</td>
-<td style="text-align: right;">0.193</td>
+<td style="text-align: right;">0.682</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">0.239</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Sodimac</td>
-<td style="text-align: right;">0.494</td>
-<td style="text-align: right;">0.088</td>
-<td style="text-align: right;">0.394</td>
-<td style="text-align: right;">0.025</td>
+<td style="text-align: right;">0.425</td>
+<td style="text-align: right;">0.084</td>
+<td style="text-align: right;">0.483</td>
+<td style="text-align: right;">0.008</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
@@ -7474,8 +7238,8 @@ f(z) = \sum_{g=1}^{G} \pi_g \, \phi(z \mid \mu_g, \Sigma_g), \qquad \sum_g \pi_g
 <tr class="odd">
 <td style="text-align: left;">Mercado Libre</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.031</td>
-<td style="text-align: right;">0.969</td>
+<td style="text-align: right;">0.027</td>
+<td style="text-align: right;">0.973</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0</td>
 </tr>
@@ -7483,23 +7247,23 @@ f(z) = \sum_{g=1}^{G} \pi_g \, \phi(z \mid \mu_g, \Sigma_g), \qquad \sum_g \pi_g
 <td style="text-align: left;">Falabella</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0.019</td>
-<td style="text-align: right;">0.974</td>
-<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">0.980</td>
+<td style="text-align: right;">0.002</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Hites</td>
-<td style="text-align: right;">0.034</td>
-<td style="text-align: right;">0.966</td>
+<td style="text-align: right;">0.008</td>
+<td style="text-align: right;">0.991</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">La Polar</td>
-<td style="text-align: right;">0.981</td>
-<td style="text-align: right;">0.015</td>
-<td style="text-align: right;">0.003</td>
+<td style="text-align: right;">0.979</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.005</td>
 <td style="text-align: right;">0.000</td>
 <td style="text-align: right;">0</td>
 </tr>
@@ -7532,63 +7296,63 @@ f(z) = \sum_{g=1}^{G} \pi_g \, \phi(z \mid \mu_g, \Sigma_g), \qquad \sum_g \pi_g
 <tr class="odd">
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.003</td>
+<td style="text-align: right;">0.002</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">12</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">24</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
@@ -7715,7 +7479,7 @@ f(z) = \sum_{g=1}^{G} \pi_g \, \phi(z \mid \mu_g, \Sigma_g), \qquad \sum_g \pi_g
 </section>
 <section id="escenarios-de-marca-y-público" class="level2" data-number="14.2">
 <h2 data-number="14.2" class="anchored" data-anchor-id="escenarios-de-marca-y-público"><span class="header-section-number">14.2</span> Escenarios de marca y público</h2>
-<p>El escenario activa un atributo entre una fracción <span class="math inline">\(f\)</span> de quienes evaluaron la marca y todavía no se lo asocian. <strong>No añade <span class="math inline">\(f\)</span> puntos porcentuales a toda la base.</strong> Para una persona con probabilidad <span class="math inline">\(p\)</span> y coeficiente <span class="math inline">\(\beta\)</span>, la nueva probabilidad es:</p>
+<p>El escenario activa un atributo entre una fracción <span class="math inline">\(f\)</span> de quienes conocen la marca y todavía no se lo asocian. <strong>No añade <span class="math inline">\(f\)</span> puntos porcentuales a toda la base.</strong> Para una persona con probabilidad <span class="math inline">\(p\)</span> y coeficiente <span class="math inline">\(\beta\)</span>, la nueva probabilidad es:</p>
 <p><span class="math display">\[p&#39;=\frac{e^\beta p}{1+(e^\beta-1)p}.\]</span></p>
 <p>Se suma <span class="math inline">\(f(p&#39;-p)\)</span> sobre personas sin asociación y se divide por todas las personas elegibles del público. Se expresa en puntos de primera preferencia. La interfaz recalcula sobre el público elegido usando los pesos poblacionales regularizados compartidos; no estima un modelo causal específico de marca o segmento.</p>
 <p>No se asignan intervalos de efecto a un escenario hipotético: la incertidumbre de una intervención real no queda identificada por esta encuesta. Los escenarios son análisis de sensibilidad del modelo, no estimaciones confirmatorias de retorno.</p>
@@ -7734,7 +7498,7 @@ p&#39; = \frac{e\,\exp(u_m)}{D - \exp(u_m) + e\,\exp(u_m)}
 <p><span class="math display">\[
 \Delta_k = f \cdot \frac{n_k}{N} \cdot \overline{(p&#39; - p)}
 \]</span></p>
-<p>con <span class="math inline">\(f\)</span> la fracción de personas que cambia de opinión, <span class="math inline">\(n_k\)</span> el número de personas elegibles —que evaluaron la marca y aún no le asocian <span class="math inline">\(k\)</span>—, <span class="math inline">\(N\)</span> las personas expuestas a su industria, y el promedio tomado sobre las personas elegibles.</p>
+<p>con <span class="math inline">\(f\)</span> la fracción de personas que cambia de opinión, <span class="math inline">\(n_k\)</span> el número de personas elegibles —que conocen la marca y aún no le asocian <span class="math inline">\(k\)</span>—, <span class="math inline">\(N\)</span> las personas expuestas a su industria, y el promedio tomado sobre las personas elegibles.</p>
 </section>
 <section id="alcance-de-la-lectura" class="level2" data-number="14.4">
 <h2 data-number="14.4" class="anchored" data-anchor-id="alcance-de-la-lectura"><span class="header-section-number">14.4</span> Alcance de la lectura</h2>
@@ -7761,88 +7525,88 @@ p&#39; = \frac{e\,\exp(u_m)}{D - \exp(u_m) + e\,\exp(u_m)}
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Es cercana</td>
+<td style="text-align: left;">Sus transacciones son seguras</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">2.229</td>
-<td style="text-align: right;">0.026</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Me permite contactarla a través de person…</td>
-<td style="text-align: right;">2</td>
 <td style="text-align: right;">117</td>
-<td style="text-align: right;">2.229</td>
-<td style="text-align: right;">0.025</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Es amable en el trato</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">101</td>
-<td style="text-align: right;">2.229</td>
-<td style="text-align: right;">0.021</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.023</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Su atención y/o servicio es ágil</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">83</td>
-<td style="text-align: right;">2.229</td>
+<td style="text-align: left;">Es cercana</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">0.878</td>
 <td style="text-align: right;">0.017</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Sus transacciones son seguras</td>
+<td style="text-align: left;">Su sitio web y/o aplicación son de uso fá…</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.017</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tiene presencia en todo Chile</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.016</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Me permite contactarla a través de person…</td>
 <td style="text-align: right;">5</td>
-<td style="text-align: right;">57</td>
-<td style="text-align: right;">2.229</td>
+<td style="text-align: right;">132</td>
+<td style="text-align: right;">0.878</td>
 <td style="text-align: right;">0.016</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Usa mi mismo lenguaje</td>
+<td style="text-align: left;">Su atención y/o servicio es ágil</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">75</td>
-<td style="text-align: right;">2.229</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">0.878</td>
 <td style="text-align: right;">0.015</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Me ofrece servicios, productos y/o benefi…</td>
+<td style="text-align: left;">Es amable en el trato</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: right;">95</td>
-<td style="text-align: right;">2.229</td>
-<td style="text-align: right;">0.014</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.013</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Su sitio web y/o aplicación son de uso fá…</td>
+<td style="text-align: left;">Usa mi mismo lenguaje</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: right;">63</td>
-<td style="text-align: right;">2.229</td>
-<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.011</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Sus procesos son automatizados</td>
 <td style="text-align: right;">9</td>
-<td style="text-align: right;">74</td>
-<td style="text-align: right;">2.229</td>
-<td style="text-align: right;">0.013</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Me hace sentir comprendido</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">106</td>
-<td style="text-align: right;">2.229</td>
-<td style="text-align: right;">0.012</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Tiene presencia en todo Chile</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">51</td>
-<td style="text-align: right;">2.229</td>
-<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.010</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Toma en cuenta y se adapta a las continge…</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">75</td>
-<td style="text-align: right;">2.229</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">0.878</td>
 <td style="text-align: right;">0.010</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Es honesta y transparente</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Es fácil de contactar</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">131</td>
+<td style="text-align: right;">0.878</td>
+<td style="text-align: right;">0.007</td>
 </tr>
 </tbody>
 </table>
@@ -7865,7 +7629,7 @@ y_{jt} \sim \text{Binomial}(n_{jt},\ \pi_{jt})
 \qquad u_j \sim N(0,\sigma_u^2), \quad v_s \sim N(0,\sigma_v^2)
 \]</span></p>
 <p>donde <span class="math inline">\(\tilde{P}_{jt}\)</span> es la percepción estandarizada —el promedio de los atributos—, <span class="math inline">\(\tilde{A}_{jt}\)</span> el alcance estandarizado, <span class="math inline">\(t\)</span> el año centrado en la primera edición, <span class="math inline">\(u_j\)</span> el término propio de la marca y <span class="math inline">\(v_s\)</span> el de la industria.</p>
-<p>Modelar la preferencia como binomial con denominador conocido <strong>pondera automáticamente</strong> por el tamaño de la base: una marca con 60 evaluadores aporta menos que una con 200, sin necesidad de pesos definidos a mano. Los términos <span class="math inline">\(u_j\)</span> y <span class="math inline">\(v_s\)</span> producen <em>pooling</em> parcial: las marcas con poca información se acercan al promedio de su industria en vez de generar estimaciones extremas.</p>
+<p>Modelar la preferencia como binomial con denominador conocido <strong>pondera automáticamente</strong> por el tamaño de la base: una marca con 60 conocedores aporta menos que una con 200, sin necesidad de pesos definidos a mano. Los términos <span class="math inline">\(u_j\)</span> y <span class="math inline">\(v_s\)</span> producen <em>pooling</em> parcial: las marcas con poca información se acercan al promedio de su industria en vez de generar estimaciones extremas.</p>
 </section>
 <section id="separación-entre-y-dentro" class="level2" data-number="15.2">
 <h2 data-number="15.2" class="anchored" data-anchor-id="separación-entre-y-dentro"><span class="header-section-number">15.2</span> Separación entre y dentro</h2>
@@ -7895,25 +7659,25 @@ y_{jt} \sim \text{Binomial}(n_{jt},\ \pi_{jt})
 <tr class="odd">
 <td style="text-align: left;">Solo diferencias entre marcas</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">1579</td>
+<td style="text-align: right;">1582</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Percepcion y ano</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">1359</td>
+<td style="text-align: right;">1430</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Con alcance e industria</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">1308</td>
+<td style="text-align: right;">1321</td>
 <td style="text-align: left;">TRUE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Separando entre marcas y dentro</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: right;">1311</td>
+<td style="text-align: right;">1323</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 </tbody>
@@ -7952,90 +7716,90 @@ y_{jt} \sim \text{Binomial}(n_{jt},\ \pi_{jt})
 <tr class="odd">
 <td style="text-align: left;">Modelo elegido</td>
 <td style="text-align: left;">percepcion_z</td>
-<td style="text-align: right;">0.542</td>
-<td style="text-align: right;">0.036</td>
-<td style="text-align: right;">14.882</td>
+<td style="text-align: right;">0.477</td>
+<td style="text-align: right;">0.033</td>
+<td style="text-align: right;">14.608</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.471</td>
-<td style="text-align: right;">0.613</td>
-<td style="text-align: right;">1.719</td>
+<td style="text-align: right;">0.413</td>
+<td style="text-align: right;">0.540</td>
+<td style="text-align: right;">1.610</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Modelo elegido</td>
 <td style="text-align: left;">alcance_z</td>
-<td style="text-align: right;">0.332</td>
-<td style="text-align: right;">0.057</td>
-<td style="text-align: right;">5.799</td>
+<td style="text-align: right;">0.660</td>
+<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">12.036</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.220</td>
-<td style="text-align: right;">0.444</td>
-<td style="text-align: right;">1.394</td>
+<td style="text-align: right;">0.553</td>
+<td style="text-align: right;">0.768</td>
+<td style="text-align: right;">1.936</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Modelo elegido</td>
 <td style="text-align: left;">t</td>
-<td style="text-align: right;">0.062</td>
-<td style="text-align: right;">0.040</td>
-<td style="text-align: right;">1.545</td>
-<td style="text-align: right;">0.122</td>
-<td style="text-align: right;">-0.017</td>
-<td style="text-align: right;">0.141</td>
-<td style="text-align: right;">1.064</td>
+<td style="text-align: right;">-0.029</td>
+<td style="text-align: right;">0.041</td>
+<td style="text-align: right;">-0.725</td>
+<td style="text-align: right;">0.469</td>
+<td style="text-align: right;">-0.109</td>
+<td style="text-align: right;">0.050</td>
+<td style="text-align: right;">0.971</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Entre marcas y dentro</td>
 <td style="text-align: left;">percepcion_marca</td>
-<td style="text-align: right;">0.660</td>
-<td style="text-align: right;">0.054</td>
-<td style="text-align: right;">12.327</td>
+<td style="text-align: right;">0.585</td>
+<td style="text-align: right;">0.048</td>
+<td style="text-align: right;">12.082</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.555</td>
-<td style="text-align: right;">0.765</td>
-<td style="text-align: right;">1.935</td>
+<td style="text-align: right;">0.490</td>
+<td style="text-align: right;">0.680</td>
+<td style="text-align: right;">1.795</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Entre marcas y dentro</td>
 <td style="text-align: left;">percepcion_desvio</td>
-<td style="text-align: right;">0.449</td>
-<td style="text-align: right;">0.047</td>
-<td style="text-align: right;">9.581</td>
+<td style="text-align: right;">0.392</td>
+<td style="text-align: right;">0.042</td>
+<td style="text-align: right;">9.350</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.357</td>
-<td style="text-align: right;">0.541</td>
-<td style="text-align: right;">1.567</td>
+<td style="text-align: right;">0.310</td>
+<td style="text-align: right;">0.474</td>
+<td style="text-align: right;">1.480</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Entre marcas y dentro</td>
 <td style="text-align: left;">alcance_marca</td>
-<td style="text-align: right;">0.265</td>
-<td style="text-align: right;">0.062</td>
-<td style="text-align: right;">4.312</td>
+<td style="text-align: right;">0.657</td>
+<td style="text-align: right;">0.057</td>
+<td style="text-align: right;">11.468</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.145</td>
-<td style="text-align: right;">0.386</td>
-<td style="text-align: right;">1.304</td>
+<td style="text-align: right;">0.545</td>
+<td style="text-align: right;">0.769</td>
+<td style="text-align: right;">1.929</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Entre marcas y dentro</td>
 <td style="text-align: left;">alcance_desvio</td>
-<td style="text-align: right;">0.432</td>
-<td style="text-align: right;">0.161</td>
-<td style="text-align: right;">2.681</td>
-<td style="text-align: right;">0.007</td>
-<td style="text-align: right;">0.116</td>
-<td style="text-align: right;">0.748</td>
-<td style="text-align: right;">1.541</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">0.154</td>
+<td style="text-align: right;">4.988</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.465</td>
+<td style="text-align: right;">1.068</td>
+<td style="text-align: right;">2.153</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Entre marcas y dentro</td>
 <td style="text-align: left;">t</td>
-<td style="text-align: right;">0.053</td>
-<td style="text-align: right;">0.043</td>
-<td style="text-align: right;">1.254</td>
-<td style="text-align: right;">0.210</td>
 <td style="text-align: right;">-0.030</td>
-<td style="text-align: right;">0.137</td>
-<td style="text-align: right;">1.055</td>
+<td style="text-align: right;">0.043</td>
+<td style="text-align: right;">-0.702</td>
+<td style="text-align: right;">0.483</td>
+<td style="text-align: right;">-0.114</td>
+<td style="text-align: right;">0.054</td>
+<td style="text-align: right;">0.970</td>
 </tr>
 </tbody>
 </table>
@@ -8054,11 +7818,11 @@ y_{jt} \sim \text{Binomial}(n_{jt},\ \pi_{jt})
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">marca</td>
-<td style="text-align: right;">0.369</td>
+<td style="text-align: right;">0.380</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">industria</td>
-<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">0.371</td>
 </tr>
 </tbody>
 </table>
@@ -8081,22 +7845,22 @@ y_{jt} \sim \text{Binomial}(n_{jt},\ \pi_{jt})
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Modelo principal</td>
-<td style="text-align: right;">0.542</td>
-<td style="text-align: right;">222</td>
+<td style="text-align: right;">0.477</td>
+<td style="text-align: right;">223</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Remuestreo de marcas (mediana)</td>
-<td style="text-align: right;">0.489</td>
+<td style="text-align: right;">0.411</td>
 <td style="text-align: right;">40</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Percepcion del ano anterior</td>
-<td style="text-align: right;">0.403</td>
-<td style="text-align: right;">98</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">99</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Solo marcas con base holgada</td>
-<td style="text-align: right;">0.541</td>
+<td style="text-align: right;">0.481</td>
 <td style="text-align: right;">211</td>
 </tr>
 </tbody>
@@ -8113,8 +7877,8 @@ y_{jt} \sim \text{Binomial}(n_{jt},\ \pi_{jt})
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">0.409</td>
-<td style="text-align: right;">0.563</td>
+<td style="text-align: right;">0.356</td>
+<td style="text-align: right;">0.468</td>
 <td style="text-align: right;">40</td>
 </tr>
 </tbody>
